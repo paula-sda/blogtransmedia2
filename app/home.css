@@ -1,0 +1,185 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    overflow-x: hidden;
+  }
+  
+  
+  
+  /* HERO */
+  .hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    filter: brightness(0.8);
+  }
+  
+  .hero-content {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    z-index: 1;
+  }
+  
+  .hero-content h1 {
+    font-size: 3rem;
+    margin: 15px 0;
+  }
+  
+  .hero-content p {
+    font-size: 1.2rem;
+    margin: 15px 0;
+  }
+  
+  /* Flecha scroll */
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .hero {
+      height: 90vh;
+    }
+  }
+  
+  .scroll-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+    margin: 25px 0;
+  }
+  
+  .scroll-circle:hover {
+    background-color: white;
+    color: #e67e22;
+    transform: scale(1.2);
+  }
+  
+  /* Sección contenido */
+  .contenido {
+    text-align: center;
+    padding: 80px 20px;
+    background: white;
+  }
+  
+  .contenido h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .contenido p {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    color: #555;
+  }
+  
+  /* Contenedor de tarjetas */
+  .cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* responsive */
+  }
+  
+  /* Tarjeta */
+  .card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-content {
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .card h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: #666;
+    margin: 10px 0 20px;
+  }
+  
+  /* Botón */
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e67e22;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover tarjeta */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card:hover .btn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  

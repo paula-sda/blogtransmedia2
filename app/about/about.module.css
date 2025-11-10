@@ -1,0 +1,225 @@
+
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .sectionContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 2rem;
+  }
+  
+  .reverse .sectionContent {
+    flex-direction: row-reverse;
+  }
+  
+  .sectionContent .text {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  .sectionContent .text h2 {
+    color: #e67e22;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .sectionContent .text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .sectionContent .image {
+    flex: 0 1 40%;
+    max-width: 500px;
+    min-width: 150px;
+  }
+  
+  .sectionContent img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contadores */
+  .statsSection {
+    background: linear-gradient(135deg, #fff3e6, #ffe0cc);
+    text-align: center;
+    padding: 5rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .stat {
+    flex: 1 1 180px;
+    background: #fff;
+    border-radius: 1.5rem;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  
+  .stat:hover {
+    transform: translateY(-10px) rotate(-1deg);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stat h3 {
+    font-size: 3rem;
+    color: #ff6600;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .stat:hover h3 {
+    transform: scale(1.2);
+  }
+  
+  .stat p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  
+  /* Burbujas de fondo */
+  .statsSection::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: rgba(255, 102, 0, 0.1);
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation: floatBubbles 6s ease-in-out infinite;
+  }
+  
+  .statsSection::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 150, 50, 0.1);
+    border-radius: 50%;
+    bottom: 15%;
+    right: 15%;
+    animation: floatBubbles 8s ease-in-out infinite reverse;
+  }
+  
+  @keyframes floatBubbles {
+    0%,
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(45deg);
+    }
+  }
+  
+  /* Sección final */
+  .finalSection {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 4rem 1rem;
+  }
+  
+  .finalSection h2 {
+    color: #e67e22;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+  
+  .finalSection p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  /* Responsive */
+  @media (min-width: 768px) {
+    .sectionContent {
+      flex-direction: row;
+    }
+  
+    .reverse .sectionContent {
+      flex-direction: row-reverse;
+    }
+  
+    .sectionContent .text,
+    .sectionContent .image {
+      flex: 1;
+    }
+    .stat {
+      flex: 1 1 250px;
+    }
+    .stat h3 {
+      font-size: 2.5rem;
+    }
+    .sectionContent .image {
+      max-width: 80%;
+    }
+  }
+  
+  @media (max-width: 1024px) {
+    .sectionContent {
+      flex-wrap: nowrap;
+      gap: 1.5rem;
+    }
+    .sectionContent .image {
+      max-width: 350px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .aboutHeader h1 {
+      font-size: 2rem;
+    }
+    
+    .sectionContent {
+      flex-direction: column;
+    }
+    
+    .reverse .sectionContent {
+      flex-direction: column;
+    }
+    
+    .sectionContent .image {
+      max-width: 100%;
+    }
+    
+    .stats {
+      gap: 1.5rem;
+    }
+    
+    .stat {
+      flex: 1 1 150px;
+    }
+    
+    .stat h3 {
+      font-size: 2rem;
+    }
+  }

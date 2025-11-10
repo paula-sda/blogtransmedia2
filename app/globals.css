@@ -1,26 +1,274 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.aboutHeader {
+  background: linear-gradient(135deg, #e67e22, #feb47b);
+  color: white;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.aboutHeader h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.aboutHeader p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* para que quede encima el contenido */
+    background: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
   }
-}
+  
+  .logo {
+    color: #e67e22;
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  /* Menú principal */
+  .menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+  
+  .menu li {
+    position: relative;
+  }
+  
+  .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    font-size: 16px;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  /* Línea animada debajo */
+  .menu a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #e67e22;
+    transition: width 0.3s;
+  }
+  
+  .menu a:hover {
+    color: #e67e22;
+  }
+  
+  .menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Submenu */
+  .submenu {
+    display: none;
+    position: absolute;
+    background: #111;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 5px;
+  }
+  
+  .submenu li a {
+    display: block;
+    padding: 10px;
+  }
+  
+  .menu li:hover .submenu {
+    display: block;
+  }
+  
+  /* Hamburguesa */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    background: white;
+    height: 3px;
+    margin: 4px;
+    width: 25px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav {
+      justify-content: flex-start; /* primero alineamos todo a la izquierda */
+    }
+  
+    .logo {
+      flex: 1; /* ocupa todo el espacio disponible */
+    }
+  
+    .hamburger {
+      display: flex;
+      margin-left: auto;
+    }
+  
+    .menu {
+      top: 100%;
+      margin-top: 0;
+      display: none;
+      flex-direction: column;
+      background: #000;
+      width: 100%;
+      padding: 1rem 0;
+      position: absolute;
+      top: 100%; /* justo debajo del nav */
+      left: 0;
+    }
+  
+    .menu.active {
+      display: flex;
+    }
+  
+    .submenu {
+      position: static;
+    }
+  }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  /* Footer estilos */
+  footer {
+    background-color: #151515;
+    color: #f2f2f2;
+    padding: 3rem 1rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-column {
+    flex: 1 1 200px;
+  }
+  
+  .footer-column h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #e67e22;
+  }
+  
+  .footer-column h4 {
+    margin-bottom: 1rem;
+    color: #e67e22;
+  }
+  
+  .footer-tagline {
+    text-align: left;
+    max-width: 180px;
+    margin: 0 left;
+    line-height: 1.4;
+  }
+  
+  .footer-column ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-column ul li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-column ul li a {
+    color: #f2f2f2;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .footer-column ul li a:hover {
+    color: #e67e22;
+  }
+  
+  .social-icons a {
+    font-size: 1.5rem;
+    margin-right: 0.8rem;
+    text-decoration: none;
+    color: #f2f2f2;
+    transition: transform 0.2s, color 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #e67e22;
+    transform: scale(1.1);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #555;
+    padding-top: 1rem;
+    font-size: 0.85rem;
+    color: #bbb;
+  }
+  
+  /* From Uiverse.io by MarcLazz */
+  .button-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .button {
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #2d2e32;
+    border: 2px solid #2d2e32;
+    transition: all 0.45s;
+  }
+  
+  .button:hover {
+    transform: rotate(360deg);
+    transform-origin: center center;
+    background-color: #ffff;
+    color: #2d2e32;
+  }
+  
+  .button:hover .btn-svg {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(305deg)
+      brightness(103%) contrast(103%);
+  }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

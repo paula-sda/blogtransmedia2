@@ -4,10 +4,10 @@ import Footer from '../../components/Footer';
 import Markdown from 'markdown-to-jsx';
 import { 
   SitiosSection, 
-  ComidaSection, 
-  CuriosidadSection, 
-  CarruselSection 
-} from '../../components/CustomMarkdown';
+  ComidaSection,
+  CarruselSection
+ 
+} from '../../components/CustomMarkdwn2';
 
 export async function generateStaticParams() {
   const posts = getAllPostIds();
@@ -37,6 +37,24 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
 
   console.log('Intro extraída:', introContent);
 
+// Extraer sección "¿Sabías que...?"
+let curiosidadesContent = "";
+
+const curiosidadHeading = post.content.indexOf("## ¿Sabías que");
+
+if (curiosidadHeading !== -1) {
+  // Buscar el siguiente heading después del "¿Sabías que...?"
+  const nextHeadingIndex = post.content.indexOf("## ", curiosidadHeading + 3);
+
+  if (nextHeadingIndex !== -1) {
+    // Si hay más secciones después
+    curiosidadesContent = post.content.substring(curiosidadHeading, nextHeadingIndex);
+  } else {
+    // Si fuera la última (no es tu caso, pero lo dejamos por seguridad)
+    curiosidadesContent = post.content.substring(curiosidadHeading);
+  }
+}
+
   return (
     <>
       <Header />
@@ -63,10 +81,24 @@ export default async function Post({ params }: { params: Promise<{ id: string }>
            </section>
            <section>
           {/* Componentes especiales */}
-          <SitiosSection />
-          <ComidaSection />
-          <CuriosidadSection />
-          <CarruselSection />
+          <SitiosSection postContent={post.content} />
+          <ComidaSection postContent={post.content} />
+
+        </section>
+        <section className="curiosidad">
+  <Markdown
+    options={{
+      forceBlock: true,
+      wrapper: 'div'
+    }}
+  >
+    {curiosidadesContent}
+  </Markdown>
+</section>
+
+        <section>
+        <CarruselSection postContent={post.content} />
+          
         </section>
       </article>
 

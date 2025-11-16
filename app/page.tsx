@@ -24,7 +24,7 @@ export default function Home() {
       
       {/* CONTENIDO */}
       <section id="contenido" className="contenido">
-        <h2>Bienvenido a este Blog de Viajes</h2>
+        <h1>Bienvenido a este Blog de Viajes</h1>
         <p>
           Aquí encontrarás experiencias, consejos y aventuras de distintos
           destinos.

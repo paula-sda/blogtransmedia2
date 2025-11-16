@@ -13,9 +13,9 @@ export default function Footer() {
           <h4>Páginas</h4>
           <ul>
             <li><Link href="/">Inicio</Link></li>
-            <li><Link href="/post1">París en 3 días</Link></li>
-            <li><Link href="/post2">Una semana en Amsterdam</Link></li>
-            <li><Link href="/post3">Visitamos Berlín</Link></li>
+            <li><Link href="/posts/post1">París en 3 días</Link></li>
+            <li><Link href="/posts/post2">Una semana en Amsterdam</Link></li>
+            <li><Link href="/posts/post3">Visitamos Berlín</Link></li>
             <li><Link href="/about">Sobre Nosotros</Link></li>
           </ul>
         </div>

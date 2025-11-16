@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import Image from 'next/image';
 import styles from './about.module.css';
 
 export default function About() {
@@ -107,9 +108,11 @@ export default function About() {
             </p>
           </div>
           <div className={styles.image}>
-            <img
-              src="imagenes/about us/img1.jpg"
+            <Image
+              src="/imagenes/about us/img1.jpg"
               alt="paisaje de montaña"
+              width={500}
+              height={300}
             />
           </div>
         </div>
@@ -128,9 +131,11 @@ export default function About() {
             </p>
           </div>
           <div className={styles.image}>
-            <img
-              src="imagenes/about us/img2.jpg"
+            <Image
+              src="/imagenes/about us/img2.jpg"
               alt="Cultura y personas"
+              width={500}
+              height={300}
             />
           </div>
         </div>
@@ -150,9 +155,11 @@ export default function About() {
             </p>
           </div>
           <div className={styles.image}>
-            <img
-              src="imagenes/about us/img3.jpg"
+            <Image
+              src="/imagenes/about us/img3.jpg"
               alt="Viajes por el mundo"
+              width={500}
+              height={300}
             />
           </div>
         </div>

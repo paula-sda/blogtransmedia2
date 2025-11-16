@@ -1,6 +1,7 @@
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Link from 'next/link';
+import Image from 'next/image';
 import './home.css';
 
 
@@ -32,7 +33,7 @@ export default function Home() {
         <div className="cards-container">
           {/* Tarjeta 1 */}
           <div className="card">
-            <img src="imagenes/blog1/portada.jpg" alt="Foto París" />
+            <Image src="/imagenes/blog1/portada.jpg" alt="Foto París" width={500} height={300} />
             <div className="card-content">
               <h3>París en 3 días</h3>
               <p>
@@ -45,7 +46,7 @@ export default function Home() {
 
           {/* Tarjeta 2 */}
           <div className="card">
-            <img src="imagenes/blog2/portada.jpg" alt="Foto Amsterdam" />
+            <Image src="/imagenes/blog2/portada.jpg" alt="Foto Amsterdam" width={500} height={300} />
             <div className="card-content">
               <h3>Una semana en Amsterdam</h3>
               <p>
@@ -58,7 +59,7 @@ export default function Home() {
 
           {/* Tarjeta 3 */}
           <div className="card">
-            <img src="imagenes/blog3/portada.jpg" alt="Foto Berlín" />
+            <Image src="/imagenes/blog3/portada.jpg" alt="Foto Berlín" width={500} height={300} />
             <div className="card-content">
               <h3>Visitamos Berlín</h3>
               <p>
